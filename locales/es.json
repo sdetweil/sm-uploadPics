@@ -1,0 +1,11 @@
+{
+  "uploadPics": {
+    "config": {
+      "title": "Ajustes de configuración de carga de imágenes",
+      "dest-title": "Cargar destino",
+      "debug-title": "Depurar",
+      "dest": "ruta al repositorio de imágenes del complemento del visor",
+      "debug": "mensajes de depuración de salida"
+    }
+  }
+}

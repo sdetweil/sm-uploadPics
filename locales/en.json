@@ -1,0 +1,11 @@
+{
+  "uploadPics": {
+    "config": {
+      "title":"Upload Pictures configuration Settings",
+      "dest-title": "Upload Destination",
+      "debug-title": "Debug",
+      "dest": "path to viewer plugin image repository",
+      "debug": "output debug messages"
+    }
+  }
+}

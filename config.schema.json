@@ -1,0 +1,39 @@
+{
+	"schema": {
+		"uploadPics": {
+			"type": "object",
+			"title": "{{title}}",
+			"properties": {
+				"dest": {
+					"type": "string",
+					"title": "{{dest-title}}",
+					"default": "backgroundImage/images"
+				},
+				"debug": {
+					"type": "boolean",
+					"title": "{{debug-title}}",
+					"default": false
+				}
+			}
+		}
+	},
+	"form": [
+		{
+			"title": "{{title}}",
+			"type": "fieldset",
+			"_comment": "put this content at the bottom of list of config controls",
+			"expandable": true,
+			"order": 100,
+			"items": [
+				{
+					"key": "uploadPics.dest",
+					"description": "{{dest}}",
+				},
+				{
+					"key": "uploadPics.debug",
+					"description": "{{debug}}"
+				}
+			]
+		}
+	]
+}

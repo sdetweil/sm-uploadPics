@@ -1,0 +1,11 @@
+{
+  "uploadPics": {
+    "config": {
+      "title": "Carica le impostazioni di configurazione delle immagini",
+      "dest-title": "Carica destinazione",
+      "debug-title": "Debug",
+      "dest": "percorso al repository di immagini del plug-in del visualizzatore",
+      "debug": "emettere messaggi di debug"
+    }
+  }
+}

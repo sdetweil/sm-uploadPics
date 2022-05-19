@@ -1,0 +1,11 @@
+{
+  "uploadPics": {
+    "config": {
+      "title": "사진 구성 설정 업로드",
+      "dest-title": "업로드 대상",
+      "debug-title": "디버그",
+      "dest": "뷰어 플러그인 이미지 저장소 경로",
+      "debug": "디버그 메시지 출력"
+    }
+  }
+}

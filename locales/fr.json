@@ -1,0 +1,11 @@
+{
+  "uploadPics": {
+    "config": {
+      "title": "Télécharger les paramètres de configuration des images",
+      "dest-title": "Destination de téléchargement",
+      "debug-title": "Déboguer",
+      "dest": "chemin d'accès au référentiel d'images du plug-in de visionneuse",
+      "debug": "messages de débogage de sortie"
+    }
+  }
+}

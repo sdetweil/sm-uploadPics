@@ -1,0 +1,11 @@
+{
+  "uploadPics": {
+    "config": {
+      "title": "Configurações de configuração de upload de fotos",
+      "dest-title": "Carregar destino",
+      "debug-title": "Depurar",
+      "dest": "caminho para o repositório de imagens do plugin do visualizador",
+      "debug": "mensagens de depuração de saída"
+    }
+  }
+}

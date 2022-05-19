@@ -1,0 +1,11 @@
+{
+  "uploadPics": {
+    "config": {
+      "title": "Konfigurationseinstellungen für Bilder hochladen",
+      "dest-title": "Ziel hochladen",
+      "debug-title": "Debuggen",
+      "dest": "Pfad zum Viewer-Plug-in-Image-Repository",
+      "debug": "Debug-Meldungen ausgeben"
+    }
+  }
+}
