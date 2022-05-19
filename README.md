@@ -17,16 +17,16 @@
 
     open the smart-mirror config panel
         http://machine_IP_address:8080
-        selct the gear on the top bar to get to the config screen
+        select the gear on the top bar to get to the config screen
         scroll down to find UploadPics
 
     the config panel for sm-uploadPics displays two options
 
 
-    1.  the path to the plugin that displays the images
+    1.  the path to the plugin & folder that displays the images
         for example
             backgroundImage/images
-    2. the enable debug for additional messages during startup
+    2.  option to enable debug for additional messages during startup
 
 
  # LOCAL CSS OPTIONS
