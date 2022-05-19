@@ -27,7 +27,7 @@
 			"items": [
 				{
 					"key": "uploadPics.dest",
-					"description": "{{dest}}",
+					"description": "{{dest}}"
 				},
 				{
 					"key": "uploadPics.debug",

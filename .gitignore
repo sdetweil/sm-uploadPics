@@ -1,0 +1,5 @@
+package-lock.json
+qrcp.json
+*.png
+*.deb
+node_modules
