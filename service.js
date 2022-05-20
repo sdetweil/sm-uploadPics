@@ -43,7 +43,7 @@ angular.module("SmartMirror")
 				  	  //let t=_uppath.split(__up.sep)
 				  	  // get the relative URL to the qr image file
 			        imageurl ="." +__up.sep+ _uppath.split(__up.sep).slice(-2).join(__up.sep)  + __up.sep+ "qrfile.png";
-			        QRCode.toFile(_uppath+ +__up.sep+ "qrfile.png", v, (err) => {
+			        QRCode.toFile(_uppath+ __up.sep+ "qrfile.png", v, (err) => {
 			          if (!err) {
 			            if (config.uploadPics.debug) console.log("QRCode build done");
 			            resolve(imageurl)

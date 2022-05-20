@@ -23,7 +23,7 @@
 			"type": "fieldset",
 			"_comment": "put this content at the bottom of list of config controls",
 			"expandable": true,
-			"order": 100,
+			"order": 90,
 			"items": [
 				{
 					"key": "uploadPics.dest",
