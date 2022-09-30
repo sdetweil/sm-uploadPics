@@ -1,11 +1,13 @@
-const { spawn , exec } = require('child_process');
+
 //const fs=require('fs')
 const __up = require("path");
 let _uppath = document.currentScript.src.substring(
 	7,
 	document.currentScript.src.lastIndexOf(__up.sep)
 );
-const os = require("os");
+if( os == undefined ){
+	const os = require("os");
+}
 const QRCode = require( __up.resolve( _uppath, "node_modules", "qrcode",));
 //const getPort =require("get-port");
 
@@ -17,7 +19,7 @@ angular.module("SmartMirror")
 				files=[];
 		  let hostname ="";
 		  let imageurl="";
-
+		const { spawn , exec } = require('child_process');
 		function startServer(){
 			return new Promise((resolve,reject)=>{
 				var self = this
