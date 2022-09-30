@@ -4,18 +4,20 @@ arch=$(uname -m)
 if [ $arch == 'armv7l' ]; then
    arch=armv7
 fi
+
+ver=$(curl -sL https://github.com/claudiodangelis/qrcp | grep -i "/claudiodangelis/qrcp/releases/tag/" | awk -F/ {'print $6'} | sed -e 's/href="\(.*\)"/\1/' | awk -F\" {'print $1'})
 # get the latest release for this hardware architecture, from the list of releases
-fn=$(curl -sL https://github.com/claudiodangelis/qrcp/releases | grep -m1 $arch | awk -F'"'  '{print $2}')
+fn=$(curl -sL https://github.com/claudiodangelis/qrcp/releases/expanded_assets/$ver | grep -m1 $arch | awk -F'"'  '{print $2}')
 if [ '$fn'. != '.' ]; then
 # download the  file for this machine
 curl -sL https://github.com$fn > xx.deb
 # install qrcp
-sudo dpkg -i xx.deb
+sudo dpkg -i xx.deb >/dev/null
 else
     echo 'unable to find qrpc module for $arch'
 fi
 # add the image orientation tool
-sudo apt-get -y install exiftran
+sudo apt-get -y install exiftran >/dev/null
 # watch out for multiple networks, just write the config file
 nets=$(ip link show | grep mtu | grep -v lo | grep up | grep -v -i docker | grep "state UP" | awk -F: '{print $2}' | awk '{print $1}')
 # if only one network
