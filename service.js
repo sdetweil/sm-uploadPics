@@ -5,10 +5,13 @@ let _uppath = document.currentScript.src.substring(
 	7,
 	document.currentScript.src.lastIndexOf(__up.sep)
 );
+
 if( typeof os === 'undefined' ){
 	var os = require("os");
 	console.log("loaded os lib")
 }
+const x= os;
+
 const QRCode = require( __up.resolve( _uppath, "node_modules", "qrcode",));
 //const getPort =require("get-port");
 
@@ -31,7 +34,7 @@ angular.module("SmartMirror")
 				//		const qrcp = spawn('qrcp', ['-k', '--output', p, 'receive']);
 				const qrcp = spawn('qrcp', ['-k', "-c",  qrcp_config ,  '--output', p, 'receive']);
 
-		    hostname = os.hostname();
+		    hostname = x.hostname();
 
 				qrcp.stdout.on('data', (data) => {
 					if(first) {
