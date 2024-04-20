@@ -1,20 +1,36 @@
 #!/bin/bash
+#updated 4/19/24 for qrcp github releases page change
+platform=$(uname -o)
+platform=${platform,,}
+platform=$(echo ${platform}/${platform} | awk -F/ '{print $2}')
 
 arch=$(uname -m)
 if [ $arch == 'armv7l' ]; then
    arch=armv7
 fi
+if [ $arch == 'x86_64' ]; then
+    arch='amd64'
+fi
+if [ $arch == 'aarch64' ]; then
+    arch='arm64'
+fi
 
-ver=$(curl -sL https://github.com/claudiodangelis/qrcp | grep -i "/claudiodangelis/qrcp/releases/tag/" | awk -F/ {'print $6'} | sed -e 's/href="\(.*\)"/\1/' | awk -F\" {'print $1'})
-# get the latest release for this hardware architecture, from the list of releases
-fn=$(curl -sL https://github.com/claudiodangelis/qrcp/releases/expanded_assets/$ver | grep -m1 $arch | awk -F'"'  '{print $2}')
-if [ '$fn'. != '.' ]; then
-# download the  file for this machine
-curl -sL https://github.com$fn > xx.deb
-# install qrcp
-sudo dpkg -i xx.deb >/dev/null
-else
-    echo 'unable to find qrpc module for $arch'
+installed_qrcp=$(dpkg --list  qrcp 2>/dev/null| tail -n1 | awk '{print $3}')
+
+
+ver=$(curl -sL https://github.com/claudiodangelis/qrcp/releases | grep -i -m1 "/claudiodangelis/qrcp/releases/tag/" | awk -F/ {'print $6'} | sed -e 's/href="\(.*\)"/\1/' | awk -F\" {'print $1'}| awk -F\" '{print $1}')
+# check to see if we have the latest
+if [ "$ver." != "$installed_qrcp." ]; then
+    # get the latest release for this hardware architecture, from the list of releases
+    fn=$(curl -sL curl -sL https://github.com/claudiodangelis/qrcp/releases/expanded_assets/$ver | grep -m1 "${platform}_${arch}" | awk -F'"'  '{print $2}')
+    if [ '$fn'. != '.' ]; then
+        # download the  file for this machine
+        curl -sL https://github.com$fn > xx.deb
+        # install qrcp
+        sudo dpkg -i xx.deb >/dev/null
+    else
+        echo 'unable to find qrpc module for $arch'
+    fi
 fi
 # add the image orientation tool
 sudo apt-get -y install exiftran >/dev/null

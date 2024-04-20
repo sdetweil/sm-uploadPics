@@ -5,8 +5,9 @@ let _uppath = document.currentScript.src.substring(
 	7,
 	document.currentScript.src.lastIndexOf(__up.sep)
 );
-if( os == undefined ){
-	const os = require("os");
+if( typeof os === 'undefined' ){
+	var os = require("os");
+	console.log("loaded os lib")
 }
 const QRCode = require( __up.resolve( _uppath, "node_modules", "qrcode",));
 //const getPort =require("get-port");
